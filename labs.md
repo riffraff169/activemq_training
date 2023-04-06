@@ -1,0 +1,11 @@
+## Install
+ * `dnf install -y java`
+ * `wget https://www.apache.org/dyn/closer.cgi?filename=/activemq/5.18.0/apache-activemq-5.18.0-bin.tar.gz&action=download -O apache-activemq-5.18.0-bin.tar.gz`
+ * `cd apache-activemq-5.18.0`
+ * If running in vagrant or on remote machine
+   * `vi conf/jetty.xml`
+      * Search for 8161
+      * Change line above from 127.0.0.1 to 0.0.0.0
+      * This listens for console port on all interfaces
+ * `bin/activemq start`
+ * Web Console: http://<ip>:8161/admin   

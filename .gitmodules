@@ -1,0 +1,3 @@
+[submodule "amqutil"]
+	path = amqutil
+	url = https://github.com/kevinboone/amqutil
