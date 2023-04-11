@@ -8,4 +8,5 @@
       * Change line above from 127.0.0.1 to 0.0.0.0
       * This listens for console port on all interfaces
  * `bin/activemq start`
- * Web Console: http://<ip>:8161/admin   
+ * Go to web console
+    * Web browser at http://localhost:8161/admin
