@@ -5,56 +5,33 @@
   	* `cp ~/activemq-labs/lab3/broker1/activemq1.xml broker1/conf/activemq.xml`
   * Start broker1
   	* `broker1/bin/broker1 start`
-  	
+  * Connect 2 consumers, one to each
+  	* `broker1/bin/broker1 consumer --destination queue://my.queue --brokerUrl tcp://localhost:61616`
+  	* `broker2/bin/broker2 consumer --destination queue://my.queue --brokerUrl tcp://localhost:61617`
   * Send messages to queue
-  	* `amqutil produce 20 -d my.queue`
-  * Look on consoles to see queues:
-  	* Queue my.queue is present on broker1 with 20 messages
-  	* Queue does not exist on broker2
-  * List queues on broker1 and broker2
-  	* `amqutil list`
-  	* `amqutil list --port 61617`
-  	* Notice queue isn't present on broker2
-  * Browse queues on broker1 and broker2
-  	* `amqutil browse -d my.queue`
-  	* `amqutil browse --port 61617 -d my.queue`
-  	* Notice queue isn't present on broker2, no messages are listed
-  * Consume a message from broker1
-  	* `amqutil count -d my.queue`
-  		* Should say "Messages on my.queue: 20"
-  	* `amqutil consume -d my.queue`
-  	* `amqutil count -d my.queue`
-  		* Should say "Messages on my.queue: 19"
-  * Consume a message from broker2
-  	* `amqutil count --port 61617 -d my.queue`
-  		* Should say "Messages on my.queue: 0"
-  	* `amqutil consume --port 61617 -d my.queue`
-  	* `amqutil count --port 61617 -d my.queue`
-  		* Should say "Messages on my.queue: 18"
-  * View queue on broker1
-  	* `amqutil count -d my.queue`
-  		* Should say "Messages on my.queue: 0"
-  * Once a consumer connects to consume a message from broker2, all messages have been transfered to broker2
-  * Messages are no longer available on broker1
-  * Put more messages in queue on broker1
-  	* `amqutil produce 20 -d my.queue`
-  	* `amqutil count -d my.queue`
-  	* `amqutil count --port 61617 -d my.queue`
-  * Consume from broker1
-  	* `amqutil consume -d my.queue`
-  		* You can now consume some messages from my.queue, but only the messages that are still on broker1
-  	* `amqutil count -d my.queue`
-  	* `amqutil count --port 61617 -d broker2`
-  		* Some messages on broker1, some on broker2
-  * Consume from broker2
-  	* `amqutil consume --port 61617 -d my.queue`
-  * Now count on broker1 and broker2 again
-  	* `amqutil count -d my.queue`
-  	* `amqutil count --port 61617 -d my.queue`
-  * Notice all messages are now on broker2, none on broker1
-  * As soon as a consumer connects to broker2 to consume messages, messages are no longer available on broker1
-  * With this configuration, there isn't true load balancing
-  * It really is 1 active broker at a time, with a possible out-of-order consumption of messages if a consumer connects to broker1 before another connects and consumes from broker2.
+  	* `amqutil produce 2 -d my.queue`
+  * Notice messages are spread among both consumers
+  * Messages were sent to broker1
+  * This may not be optimal depending on how far away remote broker is
+  * May want messages to be delivered to nearest consumer
+  * Send messages multiple times to see
+  * Stop consumer1, CTRL-C
+  * Stop broker1
+  	* `broker1/bin/broker1 stop`
+  * Copy new config with different options
+  	* `cp ~/activemq-labs/lab3/broker1/activemq2.xml broker1/conf/activemq.xml`
+  * Start broker1
+  	* `broker1/bin/broker1 start`
+  * Start consumer
+  	* `broker1/bin/broker1 consumer --destination queue://my.queue --brokerUrl tcp://localhost:61616`
+  * Send messages
+  	* `amqutil produce 2 -d my.queue`
+  * Notice all messages are now consumed by consumer1
+  * Quit consumer1
+  * Send more messages
+  * All messages are consumed by consumer2 now
+  * Start consumer1
+  * Quit consumer2
+  * Send more messages
+  * Notice that messages will be consumed by 1 if connected, otherwise 2
   
-  		
-  	
