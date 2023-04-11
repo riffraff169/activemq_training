@@ -34,4 +34,5 @@
   * Quit consumer2
   * Send more messages
   * Notice that messages will be consumed by 1 if connected, otherwise 2
-  
+  * Look in console, view queues, select my.queue, view consumers
+  * Notice the active consumers
