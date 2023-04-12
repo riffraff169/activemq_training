@@ -32,3 +32,5 @@
   * Get messages on both broker1 and broker2
     * `amqutil consume -d my.queue -u consumer -p password`
     * `amqutil consume --port 61617 -d my.queue -u consumer -p password`
+
+This is the simple authentication module. There is a more complex one called JAAS that can be used instead.
