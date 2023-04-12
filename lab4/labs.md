@@ -24,3 +24,11 @@
   * Need to change config to add username/password
     * `cp ~/activemq-libs/lab4/broker2/activemq.xml broker2/conf/activemq.xml`
     * `cp ~/activemq-libs/lab4/broker1/activemq2.xml broker1/conf/activemq.xml`
+  * Restart both brokers
+    * `broker1/bin/broker1 restart`
+    * `broker2/bin/broker2 restart`
+  * Publish some messages
+    * `amqutil produce 5 -d my.queue -u publisher -p password`
+  * Get messages on both broker1 and broker2
+    * `amqutil consume -d my.queue -u consumer -p password`
+    * `amqutil consume --port 61617 -d my.queue -u consumer -p password`
