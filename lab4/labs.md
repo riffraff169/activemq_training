@@ -1,6 +1,6 @@
 ### Users
  * Copy new config with users defined
-    * `cp ~/activemq-labs/lab4/broker1/activemq1.xml broker1/conf/activemq.xml`
+    * `cp ~/activemq_training/lab4/broker1/activemq1.xml broker1/conf/activemq.xml`
     * View config file with less
     * Notice users section at the bottom with `<plugin></plugin>`
  * Restart broker1
@@ -22,8 +22,8 @@
      * `less broker1/data/activemq.log`
   * Log entry similar to `Stopping vm://broker1#104 because Failed with SecurityException: User name [null] or password is invalid.`
   * Need to change config to add username/password
-    * `cp ~/activemq-libs/lab4/broker2/activemq.xml broker2/conf/activemq.xml`
-    * `cp ~/activemq-libs/lab4/broker1/activemq2.xml broker1/conf/activemq.xml`
+    * `cp ~/activemq_training/lab4/broker2/activemq.xml broker2/conf/activemq.xml`
+    * `cp ~/activemq_training/lab4/broker1/activemq2.xml broker1/conf/activemq.xml`
   * Restart both brokers
     * `broker1/bin/broker1 restart`
     * `broker2/bin/broker2 restart`
