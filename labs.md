@@ -1,4 +1,8 @@
 ## Install
+ * Install amqutil
+   * `cd amqutil`
+   * `ln -s ../target`
+   * `./install_linux.sh`
  * `dnf install -y java`
  * `wget https://www.apache.org/dyn/closer.cgi?filename=/activemq/5.18.0/apache-activemq-5.18.0-bin.tar.gz&action=download -O apache-activemq-5.18.0-bin.tar.gz`
  * `cd apache-activemq-5.18.0`
