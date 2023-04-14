@@ -1,3 +1,6 @@
 [submodule "amqutil"]
 	path = amqutil
 	url = https://github.com/kevinboone/amqutil
+[submodule "AmqJavaExample"]
+	path = AmqJavaExample
+	url = https://github.com/wcrowell/AmqJavaExample
