@@ -1,4 +1,4 @@
-## Install
+## Setup
  * Install amqutil
    * `cd amqutil`
    * `ln -s ../target`
