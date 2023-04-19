@@ -96,9 +96,9 @@
                 decreaseNetworkConsumerPriority="false"
                 networkTTL="2"
                 dynamicOnly="true">
-                <excludeDestinations>
+                <excludedDestinations>
                     <queue physicalName=">"/>
-                </excludeDestinations>
+                </excludedDestinations>
             </networkConnector>
             <networkConnector
                 name="Q:broker2->broker3"
@@ -107,9 +107,9 @@
                 decreaseNetworkConsumerPriority="false"
                 networkTTL="2"
                 dynamicOnly="true">
-                <excludeDestinations>
+                <excludedDestinations>
                     <topic physicalName=">"/>
-                </excludeDestinations>
+                </excludedDestinations>
             </networkConnector>
         </networkConnectors>
 
