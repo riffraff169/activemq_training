@@ -23,4 +23,4 @@
   * Consume from broker1
     * `amqutil consume -d my.queue`
   * New messages on broker3 get sent to broker1
-    Messages that were originally on broker1 that were sent to broker3, stay on broker3
+    Messages that were originally on broker1 that were sent to broker3, won't move back to broker1
