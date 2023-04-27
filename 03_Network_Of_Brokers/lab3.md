@@ -5,10 +5,10 @@
 	* `bin/activemq create broker1`
 	* `bin/activemq create broker2`
   * Edit configs to separate the two
-    * `cp ~/activemq_training/lab2/broker1/activemq.xml broker1/conf`
-    * `cp ~/activemq_training/lab2/broker1/jetty.xml broker1/conf`
-    * `cp ~/activemq_training/lab2/broker2/activemq.xml broker2/conf`
-	* `cp ~/activemq_training/lab2/broker2/jetty.xml broker2/conf`
+    * `cp ~/activemq_training/03_Network_Of_Brokers/broker1/activemq.xml broker1/conf`
+    * `cp ~/activemq_training/03_Network_Of_Brokers/broker1/jetty.xml broker1/conf`
+    * `cp ~/activemq_training/03_Network_Of_Brokers/broker2/activemq.xml broker2/conf`
+	* `cp ~/activemq_training/03_Network_Of_Brokers/broker2/jetty.xml broker2/conf`
   * Start both activemq brokers
 	* `broker1/bin/broker1 start`
 	    * Console at http://ip:8161/admin

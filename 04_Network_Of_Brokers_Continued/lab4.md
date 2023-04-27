@@ -2,7 +2,7 @@
   * Stop broker1
 	* `broker1/bin/broker1 stop`
   * Copy new config to broker1
-	* `cp ~/activemq_training/lab3/broker1/activemq1.xml broker1/conf/activemq.xml`
+	* `cp ~/activemq_training/04_Network_Of_Brokers_Continued/broker1/activemq1.xml broker1/conf/activemq.xml`
   * Start broker1
 	* `broker1/bin/broker1 start`
   * Connect 2 consumers, one to each
@@ -19,7 +19,7 @@
   * Stop broker1
 	* `broker1/bin/broker1 stop`
   * Copy new config with different options
-	* `cp ~/activemq_training/lab3/broker1/activemq2.xml broker1/conf/activemq.xml`
+	* `cp ~/activemq_training/04_Network_Of_Brokers_Continued/broker1/activemq2.xml broker1/conf/activemq.xml`
   * Start broker1
 	* `broker1/bin/broker1 start`
   * Start consumer

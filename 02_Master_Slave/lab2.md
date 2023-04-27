@@ -1,7 +1,7 @@
 ### Master/Slave brokers
   * Copy new configs
-    * `cp ~/activemq_training/lab5/broker1/activemq1.xml broker1/conf/activemq.xml`
-    * `cp ~/activemq_training/lab5/broker2/activemq1.xml broker2/conf/activemq.xml`
+    * `cp ~/activemq_training/02_Master_Slave/broker1/activemq1.xml broker1/conf/activemq.xml`
+    * `cp ~/activemq_training/02_Master_Slave/broker2/activemq1.xml broker2/conf/activemq.xml`
   * Make a data dir
     * `mkdir /var/lib/activemq`
   * Restart brokers
