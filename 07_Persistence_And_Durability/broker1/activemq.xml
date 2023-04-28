@@ -52,7 +52,7 @@
             http://activemq.apache.org/persistence.html
         -->
         <persistenceAdapter>
-            <kahaDB directory="${activemq.data}/kahadb"/>
+            <kahaDB directory="/var/activemq/kahadb"/>
         </persistenceAdapter>
 
 
@@ -87,12 +87,10 @@
         </transportConnectors>
         <networkConnectors>
             <networkConnector
-                name="T:broker1->broker2"
-                uri="static:(tcp://localhost:61617)"
-                userName="admin"
-                password="password"
-                duplex="false"
-                decreaseNetworkConsumerPriority="true"
+                name="T:broker1->broker3"
+                uri="static:(tcp://localhost:61618)"
+                duplex="true"
+                decreaseNetworkConsumerPriority="false"
                 networkTTL="2"
                 dynamicOnly="true">
                 <excludedDestinations>
@@ -100,12 +98,10 @@
                 </excludedDestinations>
             </networkConnector>
             <networkConnector
-                name="Q:broker1->broker2"
-                uri="static:(tcp://localhost:61617)"
-                userName="admin"
-                password="password"
-                duplex="false"
-                decreaseNetworkConsumerPriority="true"
+                name="Q:broker1->broker3"
+                uri="static:(tcp://localhost:61618)"
+                duplex="true"
+                decreaseNetworkConsumerPriority="false"
                 networkTTL="2"
                 dynamicOnly="true">
                 <excludedDestinations>
@@ -119,16 +115,6 @@
             <bean xmlns="http://www.springframework.org/schema/beans" class="org.apache.activemq.hooks.SpringContextHook"/>
         </shutdownHooks>
 
-        <plugins>
-            <simpleAuthenticationPlugin>
-                <users>
-                    <authenticationUser username="admin" password="password" groups="admins,publishers,consumers"/>
-                    <authenticationUser username="publisher" password="password" groups="publishers,consumers"/>
-                    <authenticationUser username="consumer" password="password" groups="consumers"/>
-                    <authenticationUser username="guest" password="password" groups="guests"/>
-                </users>
-            </simpleAuthenticationPlugin>
-        </plugins>
     </broker>
 
     <!--

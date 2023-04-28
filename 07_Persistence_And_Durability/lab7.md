@@ -1,3 +1,13 @@
+### Setup
+  * Copy configs again
+    * `cp ~/activemq_training/07_Persistence_And_Durability/broker1/activemq.xml broker1/conf`
+    * `cp ~/activemq_training/07_Persistence_And_Durability/broker2/activemq.xml broker2/conf`
+    * `cp ~/activemq_training/07_Persistence_And_Durability/broker3/activemq.xml broker3/conf`
+  * Restart brokers
+    * `broker1/bin/broker1 restart`
+    * `broker2/bin/broker2 restart`
+    * `broker3/bin/broker3 restart`
+
 ### Persistence
 All queues have been declared persistent so far using the `amqutil` program. This means the messages stay in the queue if the broker stops or restarts. We will now demonstrate non-persistence.
 

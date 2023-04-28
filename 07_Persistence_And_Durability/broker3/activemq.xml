@@ -10,7 +10,7 @@
     <!--
         The <broker> element is used to configure the ActiveMQ broker.
     -->
-    <broker xmlns="http://activemq.apache.org/schema/core" brokerName="broker1" dataDirectory="${activemq.data}">
+    <broker xmlns="http://activemq.apache.org/schema/core" brokerName="broker3" dataDirectory="${activemq.data}">
 
         <destinationPolicy>
             <policyMap>
@@ -83,52 +83,14 @@
         -->
         <transportConnectors>
             <!-- DOS protection, limit concurrent connections to 1000 and frame size to 100MB -->
-            <transportConnector name="openwire" uri="tcp://0.0.0.0:61616?maximumConnections=1000&amp;wireFormat.maxFrameSize=104857600"/>
+            <transportConnector name="openwire" uri="tcp://0.0.0.0:61618?maximumConnections=1000&amp;wireFormat.maxFrameSize=104857600"/>
         </transportConnectors>
-        <networkConnectors>
-            <networkConnector
-                name="T:broker1->broker2"
-                uri="static:(tcp://localhost:61617)"
-                userName="admin"
-                password="password"
-                duplex="false"
-                decreaseNetworkConsumerPriority="true"
-                networkTTL="2"
-                dynamicOnly="true">
-                <excludedDestinations>
-                    <queue physicalName=">"/>
-                </excludedDestinations>
-            </networkConnector>
-            <networkConnector
-                name="Q:broker1->broker2"
-                uri="static:(tcp://localhost:61617)"
-                userName="admin"
-                password="password"
-                duplex="false"
-                decreaseNetworkConsumerPriority="true"
-                networkTTL="2"
-                dynamicOnly="true">
-                <excludedDestinations>
-                    <topic physicalName=">"/>
-                </excludedDestinations>
-            </networkConnector>
-        </networkConnectors>
 
         <!-- destroy the spring context on shutdown to stop jetty -->
         <shutdownHooks>
             <bean xmlns="http://www.springframework.org/schema/beans" class="org.apache.activemq.hooks.SpringContextHook"/>
         </shutdownHooks>
 
-        <plugins>
-            <simpleAuthenticationPlugin>
-                <users>
-                    <authenticationUser username="admin" password="password" groups="admins,publishers,consumers"/>
-                    <authenticationUser username="publisher" password="password" groups="publishers,consumers"/>
-                    <authenticationUser username="consumer" password="password" groups="consumers"/>
-                    <authenticationUser username="guest" password="password" groups="guests"/>
-                </users>
-            </simpleAuthenticationPlugin>
-        </plugins>
     </broker>
 
     <!--
