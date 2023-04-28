@@ -12,9 +12,6 @@
     -->
     <broker xmlns="http://activemq.apache.org/schema/core" brokerName="broker1" dataDirectory="${activemq.data}">
 
-        <sslContext>
-	    <sslContext keyStore="file:${activemq.base}/conf/mybroker.ks" keyStorePassword="test123"/>
-	</sslContext>
         <destinationPolicy>
             <policyMap>
               <policyEntries>
