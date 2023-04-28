@@ -1,7 +1,19 @@
 ### Master/Slave brokers
-  * Copy new configs
-    * `cp ~/activemq_training/02_Master_Slave/broker1/activemq1.xml broker1/conf/activemq.xml`
-    * `cp ~/activemq_training/02_Master_Slave/broker2/activemq1.xml broker2/conf/activemq.xml`
+  * Stop activemq
+    * `bin/activemq stop`
+  * Create 2 new brokers
+    * `bin/activemq create broker1`
+    * `bin/activemq create broker2`
+  * Edit configs to separate the two
+    * `cp ~/activemq_training/02_Master_Slave/broker1/activemq.xml broker1/conf/activemq.xml`
+    * `cp ~/activemq_training/02_Master_Slave/broker1/jetty.xml broker1/conf/jetty.xml`
+    * `cp ~/activemq_training/02_Master_Slave/broker2/activemq.xml broker2/conf/activemq.xml`
+    * `cp ~/activemq_training/02_Master_Slave/broker2/jetty.xml broker2/conf/jetty.xml`
+  * Start both activemq brokers
+    * `broker1/bin/broker1 start`
+      * Console at http://ip:8161/admin
+    * `broker2/bin/broker2 start`
+      * Console at http://ip:8162/admin
   * Make a data dir
     * `mkdir /var/lib/activemq`
   * Restart brokers

@@ -1,20 +1,10 @@
 ### Network of brokers
-  * Stop activemq
-	* `bin/activemq stop`
-  * Create 2 new brokers
-	* `bin/activemq create broker1`
-	* `bin/activemq create broker2`
-  * Edit configs to separate the two
+  * Copy configs
     * `cp ~/activemq_training/03_Network_Of_Brokers/broker1/activemq.xml broker1/conf`
-    * `cp ~/activemq_training/03_Network_Of_Brokers/broker1/jetty.xml broker1/conf`
     * `cp ~/activemq_training/03_Network_Of_Brokers/broker2/activemq.xml broker2/conf`
-	* `cp ~/activemq_training/03_Network_Of_Brokers/broker2/jetty.xml broker2/conf`
-  * Start both activemq brokers
-	* `broker1/bin/broker1 start`
-	    * Console at http://ip:8161/admin
-	* `broker2/bin/broker2 start`
-	    * Console at http://ip:8162/admin
-  	
+  * Restart both activemq brokers
+	* `broker1/bin/broker1 restart`
+	* `broker2/bin/broker2 restart`
   * Send messages to queue
 	* `amqutil produce 20 -d my.queue`
   * Look on consoles to see queues:
