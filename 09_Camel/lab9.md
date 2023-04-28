@@ -7,7 +7,9 @@
     * `cp ~/activemq_training/09_Camel/broker1/activemq.xml broker1/conf/`
     * `cp ~/activemq_training/09_Camel/broker1/camel.xml broker1/conf/`
   * Add activemq-camel library
-    * `cp ~/activemq_training/09_camel/broker1/jars/*.jar libs/`
+    * `cp ~/activemq_training/09_Camel/jars/*.jar lib/`
+  * Start broker1
+    * `broker1/bin/broker1 start`
 
 This example just watches the topic Test.Topic and reroutes all messages to the queue Test.Queue
 

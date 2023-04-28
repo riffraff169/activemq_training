@@ -28,6 +28,10 @@ Non-persistence is faster because it is memory only, but messages can be lost if
 ### TTL
 Use TTL to expire messages after a specific time period. This is used to prevent disk or memory from filling up with messages that may not be relevant after a time.
 
+  * Start broker1
+    * `broker1/bin/broker1 start`
+  * Stop broker2
+    * `broker2/bin/broker2 stop`
   * Send messages to queue, 5 sec (5000 msec) ttl
     * `amqutil produce 5 -d my.queue3 --ttl 5000`
   * Get 1 message
