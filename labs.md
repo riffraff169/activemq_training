@@ -4,7 +4,7 @@
    * `ln -s ../target`
    * `./install_linux.sh`
  * `dnf install -y java`
- * `wget https://www.apache.org/dyn/closer.cgi?filename=/activemq/5.18.0/apache-activemq-5.18.0-bin.tar.gz&action=download -O apache-activemq-5.18.0-bin.tar.gz`
+ * `wget 'https://www.apache.org/dyn/closer.cgi?filename=/activemq/5.18.0/apache-activemq-5.18.0-bin.tar.gz&action=download' -O apache-activemq-5.18.0-bin.tar.gz`
  * `tar xzvf apache*.gz`
  * `cd apache-activemq-5.18.0`
  * If running in vagrant or on remote machine
