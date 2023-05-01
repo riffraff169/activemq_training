@@ -9,7 +9,8 @@
    * `cd amqutil`
    * `ln -s ../target`
    * `sudo ./install_linux.sh`
- * `sudo dnf install -y java`
+ * Requires java 11+, 17 can be used as well
+   * `sudo dnf install -y java-11-openjdk`
  * `cd`
  * `wget 'https://www.apache.org/dyn/closer.cgi?filename=/activemq/5.18.0/apache-activemq-5.18.0-bin.tar.gz&action=download' -O apache-activemq-5.18.0-bin.tar.gz`
  * `tar xzvf apache*.gz`
