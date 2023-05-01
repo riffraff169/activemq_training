@@ -1,14 +1,15 @@
 ## Setup
  * Install amqutil
    * `cd`
+   * `sudo install -y git`
    * `git clone https://github.com/riffraff169/activemq_training.git`
    * `cd activemq_training`
    * `git submodule init`
    * `git submodule update`
    * `cd amqutil`
    * `ln -s ../target`
-   * `./install_linux.sh`
- * `dnf install -y java`
+   * `sudo ./install_linux.sh`
+ * `sudo dnf install -y java`
  * `cd`
  * `wget 'https://www.apache.org/dyn/closer.cgi?filename=/activemq/5.18.0/apache-activemq-5.18.0-bin.tar.gz&action=download' -O apache-activemq-5.18.0-bin.tar.gz`
  * `tar xzvf apache*.gz`
