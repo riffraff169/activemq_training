@@ -23,3 +23,5 @@
     * Should open a new window (or tab)
 
   * Rerun this after `09_Camel`
+
+This is a simple config with no authentication. You wouldn't want to implement it this way in production.
