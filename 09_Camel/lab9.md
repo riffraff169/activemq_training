@@ -20,5 +20,10 @@ This example just watches the topic Test.Topic and reroutes all messages to the 
   * Get messages
     * `amqutil consume -d Test.Queue`
 
+
+  * Add another route
+    * `cp ~/activemq_training/09_Camel/broker1/camel2.xml broker1/conf/camel.xml`
+  * View queue and consume messages
+
 There are a lot of different rules that camel provides that can do many different things to messages.
 This is just a simple embedded camel example, it is not recommended. Running camel separate as part of an application that uses activemq, or with Camel-K or Quarkus is better.
